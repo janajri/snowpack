@@ -573,7 +573,7 @@ export async function command(commandOptions: CommandOptions) {
             }
             // Support proxy file imports
             const extName = path.extname(resolvedImportUrl);
-            if (extName && extName !== '.js') {
+            if (extName && responseExt === '.js' && extName !== '.js') {
               return resolvedImportUrl + '.proxy.js';
             }
             return resolvedImportUrl;
